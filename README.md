@@ -28,14 +28,12 @@ fred.homePlanet = "Mars"
 
 Fix the class definition for `Giant` in the space below so that it **does** work:  
 
-## Answer: 
-
-Class Giant {
-var name: String = "Fred"
-var weight: Double = 340.0
-var homePlanet: String = "Earth"
+``` class Giant {
+ var name: String = "Fred"
+ var weight: Double = 340.0
+ let homePlanet: String = "Earth"
 }
-
+```
 
 ## Question 2
 
