@@ -23,9 +23,19 @@ Will these three lines of code run? If not, why not?
 fred.name = "Brick"
 fred.weight = 999.2
 fred.homePlanet = "Mars"
+
+This line of code will not run because homePlanet is a constant, therefore you connot assign it a new value. 
 ```
 
-Fix the class definition for `Giant` in the space below so that it **does** work:
+Fix the class definition for `Giant` in the space below so that it **does** work:  
+
+class Giant {
+ var name: String = "Fred"
+ var weight: Double = 340.0
+ var homePlanet: String = "Earth"
+}
+
+let fred = Giant()
 
 
 ## Question 2
