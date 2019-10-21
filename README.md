@@ -31,7 +31,7 @@ Fix the class definition for `Giant` in the space below so that it **does** work
 ``` class Giant {
  var name: String = "Fred"
  var weight: Double = 340.0
- let homePlanet: String = "Earth"
+ var homePlanet: String = "Earth"
 }
 ```
 
@@ -55,9 +55,12 @@ bilbo.name = "Jake"
 bilbo.height = 1.42
 bilbo.homePlanet = "Saturn"
 ```
+## Answer: The three lines of code will not run because bilbo is a constant and structs need to be mutable. 
 
 Change the declaration of `bilbo` so that the above three lines of code **do** work:
 
+``` var bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
+```
 
 ## Question 3
 
@@ -72,6 +75,7 @@ jason.name = "Jason"
 
 What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
 
+### Answer: The  value of edgar.name will be Jason after the code is run. The value of jason.name will be "Jason"
 
 ## Question 4
 
@@ -84,6 +88,8 @@ charlesFromJupiter.homePlanet = "Jupiter"
 ```
 
 What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
+
+### Answer: The value of charles.homePlanet will be Pluto and the value of charlesFromJupiter.homePlanet will be jupiter. In structs we dont inheret values from the parent struct therefore every value is a different copy of the parent struct.
 
 
 ## Question 5
@@ -107,7 +113,20 @@ struct BankAccount {
 
 Does this code work? Why or why not?
 
+### Answer: The following code does not work because deposit is not mutable and therefore we cannot change its original value. 
+
 Fix the `BankAccount` struct so it does work.
+
+```
+mutating func deposit(_ amount: Double) {
+balance += amount
+}
+
+mutating func withdraw(_ amount: Double) {
+balance -= amount
+}
+
+```
 
 Given the code below (which should incorporate any fixes you made):
 
@@ -116,8 +135,13 @@ var joeAccount = BankAccount(owner: "Joe", balance: 100.0)
 var joeOtherAccount = joeAccount
 joeAccount.withdraw(50.0)
 ```
+``` 
+joeAccount.withdraw(50.0)
 
+```
 What will the value of `joeAccount.balance` be after the above code runs? What about the value of `joeOtherAccount.balance`? Why?
+
+### Answer: The value of joeAccount.balance will be 50.0 because we withdrew 50.0 from his original 100.00. As for joeOtherAccount, the balance will remain 100.00 because even although we assigned joeAccount.balance to joeOtherAccount, they do not inheret their values because we are working with structs and not classes and therefore we just make am unique copy.
 
 
 ## Question 6
