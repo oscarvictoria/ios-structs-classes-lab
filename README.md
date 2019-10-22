@@ -75,7 +75,7 @@ jason.name = "Jason"
 
 What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
 
-### Answer: The  value of edgar.name will be Jason after the code is run. The value of jason.name will be "Jason"
+## Answer: The  value of edgar.name will be Jason after the code is run. The value of jason.name will be "Jason"
 
 ## Question 4
 
@@ -89,7 +89,7 @@ charlesFromJupiter.homePlanet = "Jupiter"
 
 What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
 
-### Answer: The value of charles.homePlanet will be Pluto and the value of charlesFromJupiter.homePlanet will be jupiter. In structs we dont inheret values from the parent struct therefore every value is a different copy of the parent struct.
+## Answer: The value of charles.homePlanet will be Pluto and the value of charlesFromJupiter.homePlanet will be jupiter. In structs we dont inheret values from the parent struct therefore every value is a different copy of the parent struct.
 
 
 ## Question 5
@@ -113,7 +113,7 @@ struct BankAccount {
 
 Does this code work? Why or why not?
 
-### Answer: The following code does not work because deposit is not mutable and therefore we cannot change its original value. 
+## Answer: The following code does not work because deposit is not mutable and therefore we cannot change its original value. 
 
 Fix the `BankAccount` struct so it does work.
 
@@ -148,18 +148,67 @@ What will the value of `joeAccount.balance` be after the above code runs? What a
 
 a. Write a struct called `Person` that has 3 properties of type `String`: a first name, a last name and a middle name. Have the middle name be optional. Create 2 instances of a `Person`, one with a middle name and one without. Print one of their first names.
 
+``` struct Person {
+var firstName: String 
+var lastName: String 
+var middleName:String? 
+}
+
+var person1 = Person(firstName: "Oscar", lastName: "Victoria", middleName: "Daniel")
+var person2 = Person(firstName: "Oscar", lastName: "Victoria")
+
+print(person2.firstName)
+
+```
 
 b. Write a method in `Person` called `fullName` that will return a formatted string of an instance's full name. Call this method on both the instances you created in part a.
+
+```
+struct Person {
+var firstName: String 
+var lastName: String 
+var middleName:String? 
+
+func fullName(){
+print(firstName + lastName)
+}
+
+
+}
+
+person1.fullName()
+
+person2.fullName()
+
+```
 
 
 ## Question 7
 
 a. Create a struct called `Book` that has properties `title`, `author` and `rating`, of type `String`, `String`, and `Double` respectively. Create some instances of `Book`.
 
+```
+struct Book {
+var title: String
+var author: String
+var rating: Double 
+}
+
+var someBook = Book(title: "Infinite Jest" , author: "David Foster Wallace", rating: 9.8)
+````
+
 
 b. Add a method to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7
+```
+struc Book {
+var title: String
+var author: String
+var rating: Double 
+}
 
+var someBook = Book(title: "Infinite Jest" , author: "David Foster Wallace", rating: 9.8)
 
+```
 ## Question 8
 
 ```swift
